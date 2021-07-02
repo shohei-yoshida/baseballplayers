@@ -1,0 +1,88 @@
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        選手登録
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+　　　　<%= form_for @player do |f| %>
+　　　　
+　      <div class="field">　　　
+        <%= f.label :name, "選手名", class: "label" %>
+        <%= f.text_field :name, class: "input" %>
+        </div>
+  
+  　　　　<div class="field">
+        <%= f.label :team, "所属チーム", class: "label" %>
+        <%= f.text_field :team, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :number, "背番号", class: "label" %>
+        <%= f.text_field :number, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :birthday, "生年月日", class: "label" %>
+        <%= f.text_field :birthday, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :old, "年齢", class: "label" %>
+        <%= f.text_field :old, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :place, "出身地", class: "label" %>
+        <%= f.text_field :place, class: "input" %>
+        </div>
+   
+        <div class="field">
+        <%= f.label :height, "身長", class: "label" %>
+        <%= f.text_field :height, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :weight, "体重", class: "label" %>
+        <%= f.text_field :weight, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :group, "血液型", class: "label" %>
+        <%= f.text_field :group, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :position, "ポジション", class: "label" %>
+        <%= f.text_field :position, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :draht, "ドラフト年", class: "label" %>
+        <%= f.text_field :draht, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :total, "プロ通算年", class: "label" %>
+        <%= f.text_field :total, class: "input" %>
+        </div>
+  
+        <div class="field">
+        <%= f.label :career, "経歴", class: "label" %>
+        <%= f.text_field :career, class: "input" %>
+        </div>
+ 
+      　<%= f.submit '登録', class: "button is-success" %>
+       <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+

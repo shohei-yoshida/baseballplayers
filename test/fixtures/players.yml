@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: MyString
+  name: MyString
+  number: 
+  birthday: 2021-06-30
+  old: 
+  place: MyString
+  height: 9.99
+  weight: 9.99
+  type: 
+  p-or-d: MyString
+  draht: 
+  total: 
+  career: MyString
+
+two:
+  team: MyString
+  name: MyString
+  number: 
+  birthday: 2021-06-30
+  old: 
+  place: MyString
+  height: 9.99
+  weight: 9.99
+  type: 
+  p-or-d: MyString
+  draht: 
+  total: 
+  career: MyString
