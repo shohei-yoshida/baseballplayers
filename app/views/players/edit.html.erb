@@ -1,2 +1,15 @@
-<h1>Players#edit</h1>
-<p>Find me in app/views/players/edit.html.erb</p>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        選手編集
+      </h1>
+    </div>
+  </div>
+</section>
+
+
+ <%= form_for @player do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :name, class: "input" %>
+ 

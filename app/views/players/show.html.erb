@@ -1,4 +1,96 @@
-<h1>Players#show</h1>
-<p>Find me in app/views/players/show.html.erb</p>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        選手詳細
+      </h1>
+    </div>
+  </div>
+</section>
 
-<%= @player.name %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-7">
+　　　<table class="table is-narrow">
+　<tr>
+    <th>選手名</th>
+　</tr>
+　<tr>
+    <td><%= simple_format @player.name %></td>
+  </tr>
+  　<tr>
+    <th>チーム</th>
+　</tr>
+　<tr>
+    <td><%= simple_format @player.team %></td>
+  </tr>
+  <th>背番号</th>
+　</tr>
+　<tr>
+    <td><%= @player.number %></td>
+  </tr>
+  <th>生年月日</th>
+　</tr>
+　<tr>
+    <td><%= @player.birthday %></td>
+  </tr>
+  <th>年齢</th>
+　</tr>
+　<tr>
+    <td><%= @player.old %></td>
+  </tr>
+  <th>出身地</th>
+　</tr>
+　<tr>
+    <td><%= @player.place %></td>
+  </tr>
+  <th>身長</th>
+　</tr>
+　<tr>
+    <td><%= @player.height %></td>
+  </tr>
+  <th>体重</th>
+　</tr>
+　<tr>
+    <td><%= @player.weight %></td>
+  </tr>
+  <th>血液型</th>
+　</tr>
+　<tr>
+    <td><%= @player.group %></td>
+  </tr>
+  <th>ポジション</th>
+　</tr>
+　<tr>
+    <td><%= @player.position %></td>
+  </tr>
+  <th>ドラフト年</th>
+　</tr>
+　<tr>
+    <td><%= @player.draht %></td>
+  </tr>
+  <th>プロ通算年</th>
+　</tr>
+　<tr>
+    <td><%= @player.total %></td>
+  </tr>
+  <th>経歴</th>
+　</tr>
+　<tr>
+    <td><%= @player.career %></td>
+  </tr>
+</table>
+
+    <%= link_to "編集画面へ", edit_player_path(@player), class: "button is-success" %>
+ 
+</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+

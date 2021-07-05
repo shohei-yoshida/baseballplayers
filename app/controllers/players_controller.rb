@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   def index
+    @players = Player.all
   end
 
   def show
@@ -14,7 +15,6 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
     if @player.save
       redirect_to player_path(@player), success: "登録が完了しました"
-      # redirect_to root_path, success: "登録が完了しました"
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
@@ -23,6 +23,7 @@ class PlayersController < ApplicationController
   end
 
   def edit
+     @player = Player.find(params[:id])
   end
   
   private
