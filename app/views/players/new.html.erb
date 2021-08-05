@@ -8,6 +8,17 @@
   </div>
 </section>
 
+<% if @player.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@player.errors.count, "エラー") %> 空白の箇所があります</h2>
+    <ul>
+      <% @player.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -21,7 +32,7 @@
   
   　　　　<div class="field">
         <%= f.label :team, "所属チーム", class: "label" %>
-        <%= f.text_field :team, class: "input" %>
+        <%= f.select :team, ['読売ジャイアンツ', '阪神タイガース', '中日ドラゴンズ', '横浜DeNAベイスターズ', '広島東洋カープ', '東京ヤクルトスワローズ', '福岡ソフトバンクホークス', '千葉ロッテマリーンズ', '埼玉西武ライオンズ', '東北楽天ゴールデンイーグルス', '北海道日本ハムファイターズ', 'オリックス・バファローズ'], class: 'input' %>
         </div>
   
         <div class="field">
@@ -56,12 +67,12 @@
   
         <div class="field">
         <%= f.label :group, "血液型", class: "label" %>
-        <%= f.text_field :group, class: "input" %>
+        <%= f.select :group, ['A', 'B', 'AB', 'O'], class: 'input' %>
         </div>
   
         <div class="field">
         <%= f.label :position, "ポジション", class: "label" %>
-        <%= f.text_field :position, class: "input" %>
+        <%= f.select :position, ['投手', '捕手', '一塁手', '二塁手', '三塁手', '遊撃手', '外野手'], class: 'input' %>
         </div>
   
         <div class="field">
@@ -77,6 +88,11 @@
         <div class="field">
         <%= f.label :career, "経歴", class: "label" %>
         <%= f.text_field :career, class: "input" %>
+        </div>
+        
+        <div class="field">
+        <%= f.label :image, "写真", class: "label" %>
+        <%= f.attachment_field :image, class: "input" %>
         </div>
  
       　<%= f.submit '登録', class: "button is-success" %>

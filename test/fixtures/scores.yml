@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1
+  hits: MyString
+  double: MyString
+  triple: MyString
+  home_run: 
+  score: MyString
+  win: MyString
+  lose: MyString
+  hold: MyString
+  save: MyString
+
+two:
+  player_id: 1
+  hits: MyString
+  double: MyString
+  triple: MyString
+  home_run: 
+  score: MyString
+  win: MyString
+  lose: MyString
+  hold: MyString
+  save: MyString

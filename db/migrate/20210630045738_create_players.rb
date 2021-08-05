@@ -7,13 +7,14 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.date :birthday
       t.integer :old
       t.string :place
-      t.decimal :height
-      t.decimal :weight
+      t.integer :height
+      t.integer :weight
       t.string :group
       t.string :position
       t.date :draht
-      t.integer :total
+      t.date :total
       t.string :career
+      t.string :image_id
 
       t.timestamps
     end

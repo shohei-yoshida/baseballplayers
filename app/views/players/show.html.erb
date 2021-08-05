@@ -12,84 +12,102 @@
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-7">
-　　　<table class="table is-narrow">
-　<tr>
-    <th>選手名</th>
-　</tr>
-　<tr>
-    <td><%= simple_format @player.name %></td>
-  </tr>
-  　<tr>
-    <th>チーム</th>
-　</tr>
-　<tr>
-    <td><%= simple_format @player.team %></td>
-  </tr>
-  <th>背番号</th>
-　</tr>
-　<tr>
-    <td><%= @player.number %></td>
-  </tr>
-  <th>生年月日</th>
-　</tr>
-　<tr>
-    <td><%= @player.birthday %></td>
-  </tr>
-  <th>年齢</th>
-　</tr>
-　<tr>
-    <td><%= @player.old %></td>
-  </tr>
-  <th>出身地</th>
-　</tr>
-　<tr>
-    <td><%= @player.place %></td>
-  </tr>
-  <th>身長</th>
-　</tr>
-　<tr>
-    <td><%= @player.height %></td>
-  </tr>
-  <th>体重</th>
-　</tr>
-　<tr>
-    <td><%= @player.weight %></td>
-  </tr>
-  <th>血液型</th>
-　</tr>
-　<tr>
-    <td><%= @player.group %></td>
-  </tr>
-  <th>ポジション</th>
-　</tr>
-　<tr>
-    <td><%= @player.position %></td>
-  </tr>
-  <th>ドラフト年</th>
-　</tr>
-　<tr>
-    <td><%= @player.draht %></td>
-  </tr>
-  <th>プロ通算年</th>
-　</tr>
-　<tr>
-    <td><%= @player.total %></td>
-  </tr>
-  <th>経歴</th>
-　</tr>
-　<tr>
-    <td><%= @player.career %></td>
-  </tr>
-</table>
-
-    <%= link_to "編集画面へ", edit_player_path(@player), class: "button is-success" %>
- 
-</div>
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by1">
+              <%= attachment_image_tag @player, :image %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="name is-4"><%= @player.name %></p>
+              </div>
+            </div>
+              <table class="table is-narrow">
+                <tr>
+                  <th>チーム</th>
+                  <td><%= @player.team %></td>
+                </tr>
+                <tr>
+                  <th>背番号</th>
+                  <td><%= @player.number %></td>
+                </tr>
+                <tr>
+                  <th>生年月日</th>
+                  <td><%= @player.birthday.strftime('%Y年%m月%d日') %></td>
+                </tr>
+                <tr>
+                  <th>年齢</th>
+                  <td><%= @player.old %></td>
+                </tr>
+                <tr>
+                  <th>出身地</th>
+                  <td><%= @player.place %></td>
+                </tr>
+                  <tr>
+                  <th>身長</th>
+                  <td><%= @player.height %></td>
+                </tr>
+                <tr>
+                  <th>体重</th>
+                  <td><%= @player.weight %></td>
+                </tr>
+                <tr>
+                  <th>血液型</th>
+                  <td><%= @player.group %></td>
+                </tr>
+                <tr>
+                  <th>ポジション</th>
+                  <td><%= @player.position %></td>
+                </tr>
+                <tr>
+                  <th>ドラフト年</th>
+                  <td><%= @player.draht&.strftime('%Y年') %></td>
+                </tr>
+                <tr>
+                  <th>プロ通算年</th>
+                  <td><%= @player.total&.strftime('%y年') %></td>
+                </tr>
+                <tr>
+                  <th>経歴</th>
+                  <td><%= @player.career %></td>
+                </tr>
+              </table>
+              
+              <% if current_user.id == 1 %>
+                <%= link_to "編集画面へ", edit_player_path(@player), class: "button is-success" %>
+              
+                <%= link_to "成績登録へ", new_score_path(@score, player_id: @player.id), class: "button is-warning" %>
+                
+                <% if @player.scores.present? %>
+                  <%= link_to "成績へ", score_path(@player.scores.first.id), class: "button is-primary" %>
+                <%end %>
+              
+                <%= link_to player_path(@player), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                  <span class="panel-icon">
+                   <i class="fas fa-trash"></i>
+                  </span>
+                この選手を削除する
+                <% end %>
+                 <% else %>
+                   <% if @player.scores.present? %>
+                     <%= link_to "成績へ", score_path(@player.scores.first.id), class: "button is-primary" %>
+                   <% end %>
+              <% end %>
+              
+           </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+              
+             
 
 
+  
+  
 
 
 
