@@ -17,45 +17,47 @@
             <div class="media">
               <div class="parent">
                 <% @player.scores.each do |score| %>
-                  <table border ="1">
-                    <tr>
-                      <th><%= score.season %>年</th>
-                      <th>安打</th>
-                      <th>二塁打</th>
-                      <th>三塁打</th>
-                      <th>ホームラン</th>
-                      <th>打率</th>
-                      <th>打点</th>
-                      <th>勝ち</th>
-                      <th>負け</th>
-                      <th>ホールド</th>
-                      <th>セーブ</th>
-                    </tr>
-                      <td></td>
-                      <td><%= score.hits %></td>
-                      <td><%= score.double %></td>
-                      <td><%= score.triple %></td>
-                      <td><%= score.home_run %></td>
-                      <td><%= score.avarage %></td>
-                      <td><%= score.points %></td>
-                      <td><%= score.win %></td>
-                      <td><%= score.lose %></td>
-                      <td><%= score.hold %></td>
-                      <td><%= score.close %></td>
-                    </tr>
-                  </table>  
+                  <div class="detail">
+                    <table border ="1">
+                      <tr>
+                        <th><%= score.season %>年</th>
+                        <th>安打</th>
+                        <th>二塁打</th>
+                        <th>三塁打</th>
+                        <th>ホームラン</th>
+                        <th>打率</th>
+                        <th>打点</th>
+                        <th>勝ち</th>
+                        <th>負け</th>
+                        <th>ホールド</th>
+                        <th>セーブ</th>
+                      </tr>
+                        <td></td>
+                        <td><%= score.hits %></td>
+                        <td><%= score.double %></td>
+                        <td><%= score.triple %></td>
+                        <td><%= score.home_run %></td>
+                        <td><%= score.avarage %></td>
+                        <td><%= score.points %></td>
+                        <td><%= score.win %></td>
+                        <td><%= score.lose %></td>
+                        <td><%= score.hold %></td>
+                        <td><%= score.close %></td>
+                      </tr>
+                    </table>  
+                    
+                    
+                    <div class="buttons">
+                      <% if current_user.id == 1 %>
+                      <%= link_to "編集画面へ", edit_score_path(score), class: "button is-success" %>
+                      <% end %>
+                    </div>
+                    
                   
-                  <div class="buttons">
-                    <% if current_user.id == 1 %>
-                    <%= link_to "編集画面へ", edit_score_path(score), class: "button is-success" %>
-                    <% end %>
                   </div>
                   
                 <% end %>
-                
-                
-                
-                
+            
               </div>  
             </div>
           </div>

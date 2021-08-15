@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20210706065747) do
     t.integer  "weight"
     t.string   "group"
     t.string   "position"
-    t.date     "draht"
-    t.date     "total"
+    t.integer  "draht"
+    t.integer  "total"
     t.string   "career"
     t.string   "image_id"
     t.datetime "created_at", null: false

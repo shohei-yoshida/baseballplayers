@@ -11,8 +11,8 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.integer :weight
       t.string :group
       t.string :position
-      t.date :draht
-      t.date :total
+      t.integer :draht
+      t.integer :total
       t.string :career
       t.string :image_id
 

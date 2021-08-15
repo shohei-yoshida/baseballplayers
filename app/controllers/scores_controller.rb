@@ -27,16 +27,16 @@ class ScoresController < ApplicationController
   def update
     @score = Score.find(params[:id])
     if @score.update(score_params)
-      redirect_to score_path(@score), notice: "選手詳細を更新しました。"
+      redirect_to score_path(@score), notice: "選手情報を更新しました。"
     else
       render :edit
     end
   end
 
   def destroy
-    player = Player.find(params[:id])
-    player.destroy
-    redirect_to players_path(player), notice: "選手を削除しました。"
+    score = Score.find(params[:id])
+    score.destroy
+    redirect_to score_path(id: score.player.id),  flash: {notice: "選手情報を削除しました。"}
   end
   
   private

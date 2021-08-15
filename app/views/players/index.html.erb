@@ -8,6 +8,7 @@
       <div class="right">
         <%= form_tag(players_search_path,:method => 'get') do %>
         <%= text_field_tag :search %>
+        <%= select_tag 'model', options_for_select({ "選手名" => "name", "球団" => "team", "経歴" => "career" }) %>
         <%= submit_tag '検索', :name => nil %>
         <% end %>
       </div>

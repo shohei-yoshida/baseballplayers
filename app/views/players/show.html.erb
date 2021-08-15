@@ -63,11 +63,11 @@
                 </tr>
                 <tr>
                   <th>ドラフト年</th>
-                  <td><%= @player.draht&.strftime('%Y年') %></td>
+                  <td><%= @player.draht %></td>
                 </tr>
                 <tr>
                   <th>プロ通算年</th>
-                  <td><%= @player.total&.strftime('%y年') %></td>
+                  <td><%= @player.total %></td>
                 </tr>
                 <tr>
                   <th>経歴</th>
@@ -76,9 +76,9 @@
               </table>
               
               <% if current_user.id == 1 %>
-                <%= link_to "編集画面へ", edit_player_path(@player), class: "button is-success" %>
+                <%= link_to "選手編集画面へ", edit_player_path(@player), class: "button is-success" %>
               
-                <%= link_to "成績登録へ", new_score_path(@score, player_id: @player.id), class: "button is-warning" %>
+                <%= link_to "成績登録へ", new_score_path( player_id: @player.id), class: "button is-warning" %>
                 
                 <% if @player.scores.present? %>
                   <%= link_to "成績へ", score_path(@player.scores.first.id), class: "button is-primary" %>

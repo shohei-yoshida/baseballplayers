@@ -20,13 +20,5 @@ class Player < ApplicationRecord
   
   has_many :scores
   
-  def self.search(search)
-      if search
-        Player.where(['name LIKE ? OR team LIKE ? OR career LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
-      else
-        Player.all
-      end
-  end
-  
 end
 
